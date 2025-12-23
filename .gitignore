@@ -1,0 +1,24 @@
+# Rust
+target/
+Cargo.lock
+
+# Logs
+*.log
+svchost.log
+
+# Screenshots
+screenshot_*.png
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Config files (contains sensitive data)
+config.toml
+
+# Backup files
+**/*.rs.bk

