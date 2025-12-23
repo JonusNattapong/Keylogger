@@ -10,7 +10,7 @@ An advanced keylogger written in Rust that captures keystrokes, active window ti
 - **Screenshot Capture**: Takes screenshots when typing in windows with "password" or "login" in the title.
 - **Encryption**: Uses AES-256-GCM to encrypt logged data before transmission.
 - **C2 Communication**: Sends encrypted logs to a specified C2 server via HTTPS POST every 30 seconds.
-- **Persistence**: On Windows, adds itself to the registry for auto-start on boot.
+- **Persistence**: On Windows, adds itself to the registry for auto-start on boot (requires administrator privileges).
 - **Stealth Mode**: Hides the console window on Windows.
 - **Local Logging**: Also saves logs to a file (`%APPDATA%\svchost.log` on Windows, or `svchost.log` locally).
 
@@ -104,7 +104,14 @@ Run the executable:
 ./target/release/keylogger
 ```
 
-The program will run in the background, logging keystrokes and sending data to the C2 server.
+**Note**: For persistence functionality on Windows, run with administrator privileges:
+
+```bash
+# On Windows (run as administrator)
+./target/release/keylogger.exe
+```
+
+The program will run in the background, logging keystrokes and sending data to the C2 server. If persistence cannot be set up (due to lack of admin privileges), the program will continue running but won't auto-start on boot.
 
 ## Disclaimer
 
